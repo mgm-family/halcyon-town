@@ -9,23 +9,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#150f09;
-    --ink-2:#1d160d;
-    --ink-3:#261c10;
-    --line:#4a3823;
-    --line-soft:#362a1a;
-    --gold:#cf9f3e;
-    --gold-bright:#f0c368;
+    --ink:#081419;
+    --ink-2:#0c1e24;
+    --ink-3:#122a32;
+    --line:#2a4850;
+    --line-soft:#1b333a;
+    --gold:#d9a441;
+    --gold-bright:#f4c869;
     --gold-dim:#8a6a24;
-    --vermillion:#a8431f;
-    --vermillion-bright:#d66a35;
-    --vermillion-dim:#5c2712;
-    --blue:#3d5a63;
-    --blue-bright:#6a8f93;
-    --paper:#f0e4cd;
-    --paper-dim:#c2b291;
-    --muted:#a08f6d;
-    --muted-2:#6b5d45;
+    --vermillion:#e0673f;
+    --vermillion-bright:#ff8f63;
+    --vermillion-dim:#7a3018;
+    --blue:#1f6f7a;
+    --blue-bright:#4fa3ad;
+    --paper:#f5ead2;
+    --paper-dim:#c7b990;
+    --muted:#8fa3a6;
+    --muted-2:#5c6e70;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -59,8 +59,9 @@
     content:"";
     position:fixed;inset:0;
     background-image:
-      radial-gradient(ellipse at 15% 8%, rgba(201,162,39,0.06), transparent 45%),
-      radial-gradient(ellipse at 85% 92%, rgba(168,67,31,0.06), transparent 45%);
+      radial-gradient(ellipse at 15% 8%, rgba(201,162,39,0.07), transparent 45%),
+      radial-gradient(ellipse at 85% 92%, rgba(224,103,63,0.07), transparent 45%),
+      radial-gradient(ellipse at 50% 100%, rgba(31,111,122,0.10), transparent 55%);
     pointer-events:none;
     z-index:0;
     animation:ambientPulse 17s ease-in-out infinite alternate;
@@ -74,7 +75,7 @@
       radial-gradient(1.5px 1.5px at 78% 58%, rgba(230,195,82,0.35), transparent),
       radial-gradient(1px 1px at 32% 78%, rgba(234,226,205,0.25), transparent),
       radial-gradient(1px 1px at 50% 42%, rgba(234,226,205,0.3), transparent),
-      radial-gradient(1.5px 1.5px at 90% 82%, rgba(214,106,53,0.3), transparent),
+      radial-gradient(1.5px 1.5px at 90% 82%, rgba(255,143,99,0.3), transparent),
       radial-gradient(1px 1px at 8% 60%, rgba(234,226,205,0.22), transparent);
     pointer-events:none;
     z-index:0;
@@ -296,7 +297,7 @@
   }
   .cta:hover{background:rgba(201,162,39,0.08);border-color:var(--gold);box-shadow:0 0 18px rgba(201,162,39,0.28);transform:translateY(-2px);}
   .cta.alt{border-color:var(--vermillion-dim, #6a281f);color:var(--vermillion-bright);}
-  .cta.alt:hover{background:rgba(168,67,31,0.08);box-shadow:0 0 18px rgba(168,67,31,0.28);}
+  .cta.alt:hover{background:rgba(224,103,63,0.08);box-shadow:0 0 18px rgba(224,103,63,0.28);}
 
   /* ---------- generic content blocks ---------- */
   section.block{margin-bottom:44px;}
@@ -333,7 +334,7 @@
 
   .notice{
     border:1px solid var(--vermillion-dim, #6a281f);
-    background:rgba(168,67,31,0.06);
+    background:rgba(224,103,63,0.06);
     padding:20px 22px;
     margin-bottom:28px;
     font-size:14px;
@@ -356,7 +357,7 @@
     transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
   }
   .char-card:hover{transform:translateY(-4px);border-color:var(--gold-dim);box-shadow:0 10px 28px rgba(0,0,0,0.4),0 0 0 1px rgba(201,162,39,0.12) inset;}
-  .char-card.shadow:hover{border-color:var(--vermillion-dim,#6a281f);box-shadow:0 10px 28px rgba(0,0,0,0.4),0 0 0 1px rgba(168,67,31,0.12) inset;}
+  .char-card.shadow:hover{border-color:var(--vermillion-dim,#6a281f);box-shadow:0 10px 28px rgba(0,0,0,0.4),0 0 0 1px rgba(224,103,63,0.12) inset;}
   .char-card .role{font-size:11px;letter-spacing:.2em;color:var(--muted);margin-bottom:8px;display:block;}
   .char-card h4{margin:0 0 6px;font-size:19px;color:var(--paper);}
   .char-card .kana{font-size:12px;color:var(--gold-dim);margin-bottom:10px;display:block;}
