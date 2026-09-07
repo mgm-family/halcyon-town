@@ -6,26 +6,26 @@
 <title>Halcyon Town ― 灯台が照らす街</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#090d12;
-    --ink-2:#0e141c;
-    --ink-3:#151d28;
-    --line:#2c3a4a;
-    --line-soft:#1f2933;
-    --gold:#c9a227;
-    --gold-bright:#e6c352;
-    --gold-dim:#7a641c;
-    --vermillion:#8a2f3a;
-    --vermillion-bright:#b23f4a;
-    --vermillion-dim:#4a1f26;
-    --blue:#1f3a5c;
-    --blue-bright:#3a6089;
-    --paper:#eae2cd;
-    --paper-dim:#b7ad92;
-    --muted:#838a94;
-    --muted-2:#525860;
+    --ink:#150f09;
+    --ink-2:#1d160d;
+    --ink-3:#261c10;
+    --line:#4a3823;
+    --line-soft:#362a1a;
+    --gold:#cf9f3e;
+    --gold-bright:#f0c368;
+    --gold-dim:#8a6a24;
+    --vermillion:#a8431f;
+    --vermillion-bright:#d66a35;
+    --vermillion-dim:#5c2712;
+    --blue:#3d5a63;
+    --blue-bright:#6a8f93;
+    --paper:#f0e4cd;
+    --paper-dim:#c2b291;
+    --muted:#a08f6d;
+    --muted-2:#6b5d45;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -40,18 +40,18 @@
   }
   ::selection{background:var(--gold-dim);color:var(--ink);}
   h1,h2,h3,h4{
-    font-family:'Shippori Mincho',serif;
+    font-family:'Zen Old Mincho',serif;
     color:var(--paper);
     margin:0 0 .6em;
     letter-spacing:.03em;
   }
   a{color:var(--gold-bright);}
   .label{
-    font-family:'Cinzel',serif;
-    font-size:11px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;
     letter-spacing:.32em;
     color:var(--muted);
-    font-weight:500;
+    font-weight:700;
   }
 
   /* ---------- background texture ---------- */
@@ -60,7 +60,7 @@
     position:fixed;inset:0;
     background-image:
       radial-gradient(ellipse at 15% 8%, rgba(201,162,39,0.06), transparent 45%),
-      radial-gradient(ellipse at 85% 92%, rgba(138,47,58,0.06), transparent 45%);
+      radial-gradient(ellipse at 85% 92%, rgba(168,67,31,0.06), transparent 45%);
     pointer-events:none;
     z-index:0;
     animation:ambientPulse 17s ease-in-out infinite alternate;
@@ -74,7 +74,7 @@
       radial-gradient(1.5px 1.5px at 78% 58%, rgba(230,195,82,0.35), transparent),
       radial-gradient(1px 1px at 32% 78%, rgba(234,226,205,0.25), transparent),
       radial-gradient(1px 1px at 50% 42%, rgba(234,226,205,0.3), transparent),
-      radial-gradient(1.5px 1.5px at 90% 82%, rgba(178,63,74,0.3), transparent),
+      radial-gradient(1.5px 1.5px at 90% 82%, rgba(214,106,53,0.3), transparent),
       radial-gradient(1px 1px at 8% 60%, rgba(234,226,205,0.22), transparent);
     pointer-events:none;
     z-index:0;
@@ -136,7 +136,7 @@
   }
   .brand .moon{width:58px;height:58px;display:block;margin-bottom:14px;}
   .brand h1{
-    font-family:'Cinzel',serif;
+    font-family:'Cormorant Garamond',serif;
     font-size:19px;
     line-height:1.3;
     letter-spacing:.06em;
@@ -164,7 +164,7 @@
     gap:12px;
     padding:13px 14px;
     color:var(--paper-dim);
-    font-family:'Shippori Mincho',serif;
+    font-family:'Zen Old Mincho',serif;
     font-size:15px;
     border-radius:2px;
     border-left:2px solid transparent;
@@ -279,7 +279,7 @@
     padding:6px 0 6px 22px;
     margin:28px 0;
     color:var(--paper-dim);
-    font-family:'Shippori Mincho',serif;
+    font-family:'Zen Old Mincho',serif;
     font-size:17px;
   }
 
@@ -289,14 +289,14 @@
     padding:13px 24px;
     border:1px solid var(--gold-dim);
     color:var(--gold-bright);
-    font-family:'Shippori Mincho',serif;
+    font-family:'Zen Old Mincho',serif;
     font-size:14px;
     letter-spacing:.08em;
     transition:background .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease;
   }
   .cta:hover{background:rgba(201,162,39,0.08);border-color:var(--gold);box-shadow:0 0 18px rgba(201,162,39,0.28);transform:translateY(-2px);}
   .cta.alt{border-color:var(--vermillion-dim, #6a281f);color:var(--vermillion-bright);}
-  .cta.alt:hover{background:rgba(138,47,58,0.08);box-shadow:0 0 18px rgba(138,47,58,0.28);}
+  .cta.alt:hover{background:rgba(168,67,31,0.08);box-shadow:0 0 18px rgba(168,67,31,0.28);}
 
   /* ---------- generic content blocks ---------- */
   section.block{margin-bottom:44px;}
@@ -333,7 +333,7 @@
 
   .notice{
     border:1px solid var(--vermillion-dim, #6a281f);
-    background:rgba(138,47,58,0.06);
+    background:rgba(168,67,31,0.06);
     padding:20px 22px;
     margin-bottom:28px;
     font-size:14px;
@@ -356,7 +356,7 @@
     transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
   }
   .char-card:hover{transform:translateY(-4px);border-color:var(--gold-dim);box-shadow:0 10px 28px rgba(0,0,0,0.4),0 0 0 1px rgba(201,162,39,0.12) inset;}
-  .char-card.shadow:hover{border-color:var(--vermillion-dim,#6a281f);box-shadow:0 10px 28px rgba(0,0,0,0.4),0 0 0 1px rgba(138,47,58,0.12) inset;}
+  .char-card.shadow:hover{border-color:var(--vermillion-dim,#6a281f);box-shadow:0 10px 28px rgba(0,0,0,0.4),0 0 0 1px rgba(168,67,31,0.12) inset;}
   .char-card .role{font-size:11px;letter-spacing:.2em;color:var(--muted);margin-bottom:8px;display:block;}
   .char-card h4{margin:0 0 6px;font-size:19px;color:var(--paper);}
   .char-card .kana{font-size:12px;color:var(--gold-dim);margin-bottom:10px;display:block;}
@@ -393,7 +393,7 @@
     background:var(--ink-3);
     color:var(--gold-bright);
     font-weight:500;
-    font-family:'Shippori Mincho',serif;
+    font-family:'Zen Old Mincho',serif;
     letter-spacing:.03em;
   }
   td strong{color:var(--paper);}
@@ -414,7 +414,7 @@
     border:1px solid var(--gold-dim);
     color:var(--gold-bright);
     display:flex;align-items:center;justify-content:center;
-    font-size:12px;font-family:'Shippori Mincho',serif;
+    font-size:12px;font-family:'Zen Old Mincho',serif;
   }
   .flow-step p{margin:0;font-size:14px;color:var(--paper-dim);}
   .flow-divider{
@@ -437,7 +437,7 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    font-family:'Shippori Mincho',serif;
+    font-family:'Zen Old Mincho',serif;
     font-size:16px;
     color:var(--paper);
     transition:background .2s ease;
@@ -506,7 +506,7 @@
     .mobile-tabbar button{
       all:unset;cursor:pointer;flex-shrink:0;
       padding:9px 16px;
-      font-family:'Shippori Mincho',serif;
+      font-family:'Zen Old Mincho',serif;
       font-size:13.5px;
       color:var(--paper-dim);
       border-bottom:2px solid transparent;
@@ -683,7 +683,7 @@
         <p>誰かが夜道で、銀の髪をなびかせる影を見たと言う。別の誰かは、屋根の上を跳ぶ小さな影を見たと言う。また別の誰かは、赤い瞳が闇の奥からこちらを見ていたと語る。</p>
         <p>それが本当に彼らなのか、確かめる術はない。だが、街が大きく揺らぐその瞬間――英雄たちはどこかで、静かに見守っているのかもしれない。</p>
         <p>月が割れた夜の真実は、今も闇の中だ。だが、双つの月が照らす街には、確かに“誰か”の気配がある。</p>
-        <p style="color:var(--gold-bright);font-family:'Shippori Mincho',serif;font-size:16px;">それが、希望なのか、警告なのか。答えを知るのは、月だけだ。</p>
+        <p style="color:var(--gold-bright);font-family:'Zen Old Mincho',serif;font-size:16px;">それが、希望なのか、警告なのか。答えを知るのは、月だけだ。</p>
       </section>
     </section>
 
