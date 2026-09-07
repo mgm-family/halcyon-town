@@ -3,28 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vulfayne City ― 双つの月が照らす街</title>
+<title>Halcyon Town ― 灯台が照らす街</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0a0908;
-    --ink-2:#141109;
-    --ink-3:#1c1810;
-    --line:#3a2f1e;
-    --line-soft:#2a2417;
+    --ink:#090d12;
+    --ink-2:#0e141c;
+    --ink-3:#151d28;
+    --line:#2c3a4a;
+    --line-soft:#1f2933;
     --gold:#c9a227;
     --gold-bright:#e6c352;
     --gold-dim:#7a641c;
-    --vermillion:#ad3a2b;
-    --vermillion-bright:#d5543f;
-    --blue:#4b6a8a;
-    --blue-bright:#6f93b6;
+    --vermillion:#8a2f3a;
+    --vermillion-bright:#b23f4a;
+    --vermillion-dim:#4a1f26;
+    --blue:#1f3a5c;
+    --blue-bright:#3a6089;
     --paper:#eae2cd;
     --paper-dim:#b7ad92;
-    --muted:#8c8368;
-    --muted-2:#5f5a48;
+    --muted:#838a94;
+    --muted-2:#525860;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -46,6 +47,7 @@
   }
   a{color:var(--gold-bright);}
   .label{
+    font-family:'Cinzel',serif;
     font-size:11px;
     letter-spacing:.32em;
     color:var(--muted);
@@ -58,7 +60,7 @@
     position:fixed;inset:0;
     background-image:
       radial-gradient(ellipse at 15% 8%, rgba(201,162,39,0.06), transparent 45%),
-      radial-gradient(ellipse at 85% 92%, rgba(173,58,43,0.06), transparent 45%);
+      radial-gradient(ellipse at 85% 92%, rgba(138,47,58,0.06), transparent 45%);
     pointer-events:none;
     z-index:0;
     animation:ambientPulse 17s ease-in-out infinite alternate;
@@ -72,7 +74,7 @@
       radial-gradient(1.5px 1.5px at 78% 58%, rgba(230,195,82,0.35), transparent),
       radial-gradient(1px 1px at 32% 78%, rgba(234,226,205,0.25), transparent),
       radial-gradient(1px 1px at 50% 42%, rgba(234,226,205,0.3), transparent),
-      radial-gradient(1.5px 1.5px at 90% 82%, rgba(213,84,63,0.3), transparent),
+      radial-gradient(1.5px 1.5px at 90% 82%, rgba(178,63,74,0.3), transparent),
       radial-gradient(1px 1px at 8% 60%, rgba(234,226,205,0.22), transparent);
     pointer-events:none;
     z-index:0;
@@ -134,8 +136,10 @@
   }
   .brand .moon{width:58px;height:58px;display:block;margin-bottom:14px;}
   .brand h1{
-    font-size:20px;
+    font-family:'Cinzel',serif;
+    font-size:19px;
     line-height:1.3;
+    letter-spacing:.06em;
     margin:0;
   }
   .brand .en{
@@ -292,7 +296,7 @@
   }
   .cta:hover{background:rgba(201,162,39,0.08);border-color:var(--gold);box-shadow:0 0 18px rgba(201,162,39,0.28);transform:translateY(-2px);}
   .cta.alt{border-color:var(--vermillion-dim, #6a281f);color:var(--vermillion-bright);}
-  .cta.alt:hover{background:rgba(173,58,43,0.08);box-shadow:0 0 18px rgba(173,58,43,0.28);}
+  .cta.alt:hover{background:rgba(138,47,58,0.08);box-shadow:0 0 18px rgba(138,47,58,0.28);}
 
   /* ---------- generic content blocks ---------- */
   section.block{margin-bottom:44px;}
@@ -329,7 +333,7 @@
 
   .notice{
     border:1px solid var(--vermillion-dim, #6a281f);
-    background:rgba(173,58,43,0.06);
+    background:rgba(138,47,58,0.06);
     padding:20px 22px;
     margin-bottom:28px;
     font-size:14px;
@@ -352,7 +356,7 @@
     transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
   }
   .char-card:hover{transform:translateY(-4px);border-color:var(--gold-dim);box-shadow:0 10px 28px rgba(0,0,0,0.4),0 0 0 1px rgba(201,162,39,0.12) inset;}
-  .char-card.shadow:hover{border-color:var(--vermillion-dim,#6a281f);box-shadow:0 10px 28px rgba(0,0,0,0.4),0 0 0 1px rgba(173,58,43,0.12) inset;}
+  .char-card.shadow:hover{border-color:var(--vermillion-dim,#6a281f);box-shadow:0 10px 28px rgba(0,0,0,0.4),0 0 0 1px rgba(138,47,58,0.12) inset;}
   .char-card .role{font-size:11px;letter-spacing:.2em;color:var(--muted);margin-bottom:8px;display:block;}
   .char-card h4{margin:0 0 6px;font-size:19px;color:var(--paper);}
   .char-card .kana{font-size:12px;color:var(--gold-dim);margin-bottom:10px;display:block;}
@@ -526,8 +530,8 @@
 <div class="shell">
   <aside class="sidebar">
     <div class="brand">
-      <div class="moon logo-mark" role="img" aria-label="Vulfayne City logo"></div>
-      <h1>Vulfayne City</h1>
+      <div class="moon logo-mark" role="img" aria-label="Halcyon Town logo"></div>
+      <h1>Halcyon Town</h1>
       <span class="en">INVITATION-ONLY ROLEPLAY CITY</span>
     </div>
     <nav class="tabs" id="tabNav">
@@ -542,7 +546,7 @@
       <button data-target="crime"><span class="dot"></span>犯罪</button>
     </nav>
     <div class="sidebar-foot">
-      <p>VAY city / Vulfayne City<br>Roleplay Server Codex</p>
+      <p>Halcyon Town<br>Roleplay Server Codex</p>
     </div>
   </aside>
 
@@ -551,10 +555,10 @@
     <!-- ============ TOP ============ -->
     <section class="panel active" id="panel-top">
       <div class="hero">
-        <div class="hero-moon logo-mark" role="img" aria-label="Vulfayne City logo"></div>
+        <div class="hero-moon logo-mark" role="img" aria-label="Halcyon Town logo"></div>
         <div>
           <span class="tagline">招待制完全ロールプレイシティ</span>
-          <h2>Vulfayne City とは</h2>
+          <h2>Halcyon Town とは</h2>
           <p class="lede">
             街に降り立てば、それは<strong>第二の人生</strong>のはじまり。<br>
             現実とは乖離した人生を、ここで歩むことができる。
@@ -583,9 +587,9 @@
 
     <!-- ============ STORY ============ -->
     <section class="panel" id="panel-story">
-      <div class="eyebrow"><span class="label">CHRONICLE</span><div class="logo-tag logo-mark" role="img" aria-label="Vulfayne City logo"></div></div>
+      <div class="eyebrow"><span class="label">CHRONICLE</span><div class="logo-tag logo-mark" role="img" aria-label="Halcyon Town logo"></div></div>
       <h2 class="panel-title">双つの月が割れる時</h2>
-      <p class="panel-sub">真神一族と黒影一族 ― Vulfayne City 誕生物語</p>
+      <p class="panel-sub">真神一族と黒影一族 ― Halcyon Town 誕生物語</p>
 
       <section class="block">
         <h3><span class="num">序章</span></h3>
@@ -666,7 +670,7 @@
 
       <div class="divider-moon">
         <div class="line"></div>
-        <div class="logo-mark" role="img" aria-label="Vulfayne City logo"></div>
+        <div class="logo-mark" role="img" aria-label="Halcyon Town logo"></div>
         <div class="line"></div>
       </div>
 
@@ -685,15 +689,15 @@
 
     <!-- ============ LATEST STORY VIDEOS ============ -->
     <section class="panel" id="panel-latest">
-      <div class="eyebrow"><span class="label">LATEST UPDATES</span><div class="logo-tag logo-mark" role="img" aria-label="Vulfayne City logo"></div></div>
+      <div class="eyebrow"><span class="label">LATEST UPDATES</span><div class="logo-tag logo-mark" role="img" aria-label="Halcyon Town logo"></div></div>
       <h2 class="panel-title">街の物語(最新情報)</h2>
-      <p class="panel-sub">Vulfayne City 公式YouTubeチャンネル ― <a href="https://youtube.com/@vulfayne-city" target="_blank" rel="noopener">youtube.com/@vulfayne-city</a></p>
+      <p class="panel-sub">Halcyon Town 公式YouTubeチャンネル ― <a href="https://youtube.com/@vulfayne-city" target="_blank" rel="noopener">youtube.com/@vulfayne-city</a></p>
 
       <section class="block">
         <div class="video-embed">
           <iframe
             src="https://www.youtube.com/embed/videoseries?list=UU6CFtOYFHp6Se2M92ml6Jbg"
-            title="Vulfayne City 公式YouTubeチャンネル ― 最新動画"
+            title="Halcyon Town 公式YouTubeチャンネル ― 最新動画"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
@@ -705,9 +709,9 @@
 
     <!-- ============ RULES ============ -->
     <section class="panel" id="panel-rules">
-      <div class="eyebrow"><span class="label">REGULATIONS</span><div class="logo-tag logo-mark" role="img" aria-label="Vulfayne City logo"></div></div>
+      <div class="eyebrow"><span class="label">REGULATIONS</span><div class="logo-tag logo-mark" role="img" aria-label="Halcyon Town logo"></div></div>
       <h2 class="panel-title">サーバー規程</h2>
-      <p class="panel-sub">VAY city / Vulfayne City へ参加する前に、必ず全てのルールに目を通してください</p>
+      <p class="panel-sub">Halcyon Town へ参加する前に、必ず全てのルールに目を通してください</p>
 
       <div class="notice">
         <p><strong>「知らなかった」は通用しません。</strong>全てのルールを把握・同意したうえで、街に降り立ってください。</p>
@@ -720,7 +724,7 @@
 
     <!-- ============ ENTRY ============ -->
     <section class="panel" id="panel-entry">
-      <div class="eyebrow"><span class="label">ENTRY</span><div class="logo-tag logo-mark" role="img" aria-label="Vulfayne City logo"></div></div>
+      <div class="eyebrow"><span class="label">ENTRY</span><div class="logo-tag logo-mark" role="img" aria-label="Halcyon Town logo"></div></div>
       <h2 class="panel-title">新規参加者の招待について</h2>
       <p class="panel-sub">招待制サーバーへの参加フロー</p>
 
@@ -729,7 +733,7 @@
 
     <!-- ============ COMPENSATION ============ -->
     <section class="panel" id="panel-compensation">
-      <div class="eyebrow"><span class="label">SUPPORT</span><div class="logo-tag logo-mark" role="img" aria-label="Vulfayne City logo"></div></div>
+      <div class="eyebrow"><span class="label">SUPPORT</span><div class="logo-tag logo-mark" role="img" aria-label="Halcyon Town logo"></div></div>
       <h2 class="panel-title">補填対応について</h2>
       <p class="panel-sub">歪み・トラブル発生時の補填ルール</p>
 
@@ -738,7 +742,7 @@
 
     <!-- ============ CIVIL SERVANT ============ -->
     <section class="panel" id="panel-civil">
-      <div class="eyebrow"><span class="label">CIVIL SERVANT ・ 白ジョブ</span><div class="logo-tag logo-mark" role="img" aria-label="Vulfayne City logo"></div></div>
+      <div class="eyebrow"><span class="label">CIVIL SERVANT ・ 白ジョブ</span><div class="logo-tag logo-mark" role="img" aria-label="Halcyon Town logo"></div></div>
       <h2 class="panel-title">公務員</h2>
       <p class="panel-sub">Civil Servant ― PD ／ EMS ／ 白メカニック ／ ディーラー</p>
 
@@ -747,7 +751,7 @@
 
     <!-- ============ CIVILIAN JOBS ============ -->
     <section class="panel" id="panel-civilian">
-      <div class="eyebrow"><span class="label">CIVILIAN JOBS</span><div class="logo-tag logo-mark" role="img" aria-label="Vulfayne City logo"></div></div>
+      <div class="eyebrow"><span class="label">CIVILIAN JOBS</span><div class="logo-tag logo-mark" role="img" aria-label="Halcyon Town logo"></div></div>
       <h2 class="panel-title">民間</h2>
       <p class="panel-sub">有人JOB ／ 飲食店 ／ ディーラー</p>
 
@@ -756,14 +760,14 @@
 
     <!-- ============ CRIME ============ -->
     <section class="panel" id="panel-crime">
-      <div class="eyebrow"><span class="label">CRIME</span><div class="logo-tag logo-mark" role="img" aria-label="Vulfayne City logo"></div></div>
+      <div class="eyebrow"><span class="label">CRIME</span><div class="logo-tag logo-mark" role="img" aria-label="Halcyon Town logo"></div></div>
       <h2 class="panel-title">犯罪</h2>
       <p class="panel-sub">犯罪者 ／ 闇医者 ／ 闇メカニック ／ ギャング ／ 犯罪ルール ／ 押収品</p>
 
       <div id="crime-content"></div>
 
       <footer class="site-foot">
-        Vulfayne City ― Invitation-only Roleplay City ／ 本ページはVAY city運営資料をもとに構成されています。内容は街の発展に応じて更新される場合があります。
+        Halcyon Town ― Invitation-only Roleplay City ／ 本ページは運営資料をもとに構成されています。内容は街の発展に応じて更新される場合があります。
       </footer>
     </section>
 
