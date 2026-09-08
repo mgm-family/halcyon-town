@@ -6,7 +6,7 @@
 <title>Halcyon Town ― 灯台が照らす街</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@500;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Noto+Sans+JP:wght@300;400;500;700&family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#fdf6ea;
@@ -40,14 +40,15 @@
   }
   ::selection{background:var(--gold-dim);color:var(--ink);}
   h1,h2,h3,h4{
-    font-family:'Klee One',serif;
+    font-family:'Mochiy Pop One',sans-serif;
+    font-weight:400;
     color:var(--paper);
     margin:0 0 .6em;
     letter-spacing:.03em;
   }
   a{color:var(--gold-bright);}
   .label{
-    font-family:'Caveat',cursive;
+    font-family:'Baloo 2',cursive;
     font-size:17px;
     letter-spacing:.1em;
     color:var(--muted);
@@ -88,6 +89,41 @@
   @keyframes twinkle{
     0%,100%{opacity:.3;}
     50%{opacity:.75;}
+  }
+
+  /* ---------- shoreline waves ---------- */
+  .shoreline{
+    position:fixed;left:0;right:0;bottom:0;
+    height:130px;
+    pointer-events:none;
+    z-index:2;
+    overflow:hidden;
+  }
+  .shoreline::before{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(to top, rgba(58,150,163,0.16), transparent 85%);
+  }
+  .shoreline .wave{
+    position:absolute;bottom:0;left:0;
+    width:200%;height:100%;
+  }
+  .wave-back path{fill:rgba(58,150,163,0.28);}
+  .wave-back{animation:waveDriftA 16s linear infinite;}
+  .wave-mid path{fill:rgba(224,186,102,0.22);}
+  .wave-mid{animation:waveDriftB 12s linear infinite reverse;}
+  .wave-front path{fill:rgba(255,246,224,0.4);}
+  .wave-front{animation:waveDriftA 9s linear infinite;}
+  .wave-foam path{
+    stroke:rgba(255,255,255,0.8);
+    stroke-width:3;
+  }
+  .wave-foam{animation:waveDriftB 9s linear infinite, foamPulse 3.2s ease-in-out infinite;}
+  @keyframes waveDriftA{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @keyframes waveDriftB{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+  @keyframes foamPulse{0%,100%{opacity:.35;}50%{opacity:.85;}}
+  @media (max-width:720px){
+    .shoreline{height:70px;}
   }
 
   /* custom scrollbar */
@@ -137,7 +173,7 @@
   }
   .brand .moon{width:58px;height:58px;display:block;margin-bottom:14px;}
   .brand h1{
-    font-family:'Caveat',cursive;
+    font-family:'Baloo 2',cursive;
     font-size:28px;
     font-weight:700;
     line-height:1.2;
@@ -166,7 +202,7 @@
     gap:12px;
     padding:13px 14px;
     color:var(--paper-dim);
-    font-family:'Klee One',serif;
+    font-family:'Mochiy Pop One',sans-serif;
     font-size:15px;
     border-radius:2px;
     border-left:2px solid transparent;
@@ -281,7 +317,7 @@
     padding:6px 0 6px 22px;
     margin:28px 0;
     color:var(--paper-dim);
-    font-family:'Klee One',serif;
+    font-family:'Mochiy Pop One',sans-serif;
     font-size:17px;
   }
 
@@ -291,7 +327,7 @@
     padding:13px 24px;
     border:1px solid var(--gold-dim);
     color:var(--gold-bright);
-    font-family:'Klee One',serif;
+    font-family:'Mochiy Pop One',sans-serif;
     font-size:14px;
     letter-spacing:.08em;
     transition:background .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease;
@@ -395,7 +431,7 @@
     background:var(--ink-3);
     color:var(--gold-bright);
     font-weight:500;
-    font-family:'Klee One',serif;
+    font-family:'Mochiy Pop One',sans-serif;
     letter-spacing:.03em;
   }
   td strong{color:var(--paper);}
@@ -416,7 +452,7 @@
     border:1px solid var(--gold-dim);
     color:var(--gold-bright);
     display:flex;align-items:center;justify-content:center;
-    font-size:12px;font-family:'Klee One',serif;
+    font-size:12px;font-family:'Mochiy Pop One',sans-serif;
   }
   .flow-step p{margin:0;font-size:14px;color:var(--paper-dim);}
   .flow-divider{
@@ -439,7 +475,7 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    font-family:'Klee One',serif;
+    font-family:'Mochiy Pop One',sans-serif;
     font-size:16px;
     color:var(--paper);
     transition:background .2s ease;
@@ -509,7 +545,7 @@
     .mobile-tabbar button{
       all:unset;cursor:pointer;flex-shrink:0;
       padding:9px 16px;
-      font-family:'Klee One',serif;
+      font-family:'Mochiy Pop One',sans-serif;
       font-size:13.5px;
       color:var(--paper-dim);
       border-bottom:2px solid transparent;
@@ -527,6 +563,13 @@
 </style>
 </head>
 <body>
+
+<div class="shoreline" aria-hidden="true">
+  <svg class="wave wave-back" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,60 C150,20 350,100 600,55 C850,10 1050,95 1200,50 L1200,120 L0,120 Z"></path></svg>
+  <svg class="wave wave-mid" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,75 C200,105 450,25 700,65 C900,95 1050,45 1200,70 L1200,120 L0,120 Z"></path></svg>
+  <svg class="wave wave-front" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,85 C180,60 380,105 620,80 C860,55 1020,100 1200,82 L1200,120 L0,120 Z"></path></svg>
+  <svg class="wave wave-foam" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,85 C180,60 380,105 620,80 C860,55 1020,100 1200,82" fill="none"></path></svg>
+</div>
 
 <div class="mobile-tabbar" id="mobileTabbar"></div>
 
@@ -686,7 +729,7 @@
         <p>誰かが夜道で、銀の髪をなびかせる影を見たと言う。別の誰かは、屋根の上を跳ぶ小さな影を見たと言う。また別の誰かは、赤い瞳が闇の奥からこちらを見ていたと語る。</p>
         <p>それが本当に彼らなのか、確かめる術はない。だが、街が大きく揺らぐその瞬間――英雄たちはどこかで、静かに見守っているのかもしれない。</p>
         <p>月が割れた夜の真実は、今も闇の中だ。だが、双つの月が照らす街には、確かに“誰か”の気配がある。</p>
-        <p style="color:var(--gold-bright);font-family:'Klee One',serif;font-size:16px;">それが、希望なのか、警告なのか。答えを知るのは、月だけだ。</p>
+        <p style="color:var(--gold-bright);font-family:'Mochiy Pop One',sans-serif;font-size:16px;">それが、希望なのか、警告なのか。答えを知るのは、月だけだ。</p>
       </section>
     </section>
 
