@@ -6,7 +6,7 @@
 <title>Halcyon Town ― 灯台が照らす街</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Noto+Sans+JP:wght@300;400;500;700&family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#fdf6ea;
@@ -40,16 +40,17 @@
   }
   ::selection{background:var(--gold-dim);color:var(--ink);}
   h1,h2,h3,h4{
-    font-family:'Zen Old Mincho',serif;
+    font-family:'Mochiy Pop One',sans-serif;
+    font-weight:400;
     color:var(--paper);
     margin:0 0 .6em;
     letter-spacing:.03em;
   }
   a{color:var(--gold-bright);}
   .label{
-    font-family:'Cormorant Garamond',serif;
-    font-size:12px;
-    letter-spacing:.32em;
+    font-family:'Baloo 2',cursive;
+    font-size:17px;
+    letter-spacing:.1em;
     color:var(--muted);
     font-weight:700;
   }
@@ -88,6 +89,41 @@
   @keyframes twinkle{
     0%,100%{opacity:.3;}
     50%{opacity:.75;}
+  }
+
+  /* ---------- shoreline waves ---------- */
+  .shoreline{
+    position:fixed;left:0;right:0;bottom:0;
+    height:130px;
+    pointer-events:none;
+    z-index:2;
+    overflow:hidden;
+  }
+  .shoreline::before{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(to top, rgba(58,150,163,0.16), transparent 85%);
+  }
+  .shoreline .wave{
+    position:absolute;bottom:0;left:0;
+    width:200%;height:100%;
+  }
+  .wave-back path{fill:rgba(58,150,163,0.28);}
+  .wave-back{animation:waveDriftA 16s linear infinite;}
+  .wave-mid path{fill:rgba(224,186,102,0.22);}
+  .wave-mid{animation:waveDriftB 12s linear infinite reverse;}
+  .wave-front path{fill:rgba(255,246,224,0.4);}
+  .wave-front{animation:waveDriftA 9s linear infinite;}
+  .wave-foam path{
+    stroke:rgba(255,255,255,0.8);
+    stroke-width:3;
+  }
+  .wave-foam{animation:waveDriftB 9s linear infinite, foamPulse 3.2s ease-in-out infinite;}
+  @keyframes waveDriftA{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @keyframes waveDriftB{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+  @keyframes foamPulse{0%,100%{opacity:.35;}50%{opacity:.85;}}
+  @media (max-width:720px){
+    .shoreline{height:70px;}
   }
 
   /* custom scrollbar */
@@ -137,10 +173,11 @@
   }
   .brand .moon{width:58px;height:58px;display:block;margin-bottom:14px;}
   .brand h1{
-    font-family:'Cormorant Garamond',serif;
-    font-size:19px;
-    line-height:1.3;
-    letter-spacing:.06em;
+    font-family:'Baloo 2',cursive;
+    font-size:28px;
+    font-weight:700;
+    line-height:1.2;
+    letter-spacing:.02em;
     margin:0;
   }
   .brand .en{
@@ -165,7 +202,7 @@
     gap:12px;
     padding:13px 14px;
     color:var(--paper-dim);
-    font-family:'Zen Old Mincho',serif;
+    font-family:'Mochiy Pop One',sans-serif;
     font-size:15px;
     border-radius:2px;
     border-left:2px solid transparent;
@@ -232,6 +269,16 @@
     width:14px;height:14px;flex-shrink:0;
   }
   .eyebrow .logo-tag{width:30px;height:30px;opacity:.9;}
+  .scene-banner{
+    width:100%;
+    aspect-ratio:400/120;
+    border-radius:6px;
+    margin-bottom:18px;
+    background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20400%20120%27%3E%20%3Cdefs%3E%20%3ClinearGradient%20id%3D%27sky%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%20%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%23fdf1dc%27/%3E%20%3Cstop%20offset%3D%2755%25%27%20stop-color%3D%27%23f6cf9b%27/%3E%20%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23e8a86a%27/%3E%20%3C/linearGradient%3E%20%3ClinearGradient%20id%3D%27sea%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%20%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%233a96a3%27/%3E%20%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23164e58%27/%3E%20%3C/linearGradient%3E%20%3CradialGradient%20id%3D%27sun%27%20cx%3D%2750%25%27%20cy%3D%2750%25%27%20r%3D%2750%25%27%3E%20%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%23fff3d6%27/%3E%20%3Cstop%20offset%3D%2760%25%27%20stop-color%3D%27%23f0c368%27/%3E%20%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23e0673f%27/%3E%20%3C/radialGradient%3E%20%3C/defs%3E%20%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27400%27%20height%3D%27120%27%20fill%3D%27url%28%23sky%29%27/%3E%20%3Ccircle%20cx%3D%27230%27%20cy%3D%2768%27%20r%3D%2726%27%20fill%3D%27url%28%23sun%29%27/%3E%20%3Crect%20x%3D%270%27%20y%3D%2770%27%20width%3D%27400%27%20height%3D%2750%27%20fill%3D%27url%28%23sea%29%27/%3E%20%3Cellipse%20cx%3D%27230%27%20cy%3D%2773%27%20rx%3D%2717%27%20ry%3D%275%27%20fill%3D%27%23fff3d6%27%20opacity%3D%270.55%27/%3E%20%3Cellipse%20cx%3D%27230%27%20cy%3D%2786%27%20rx%3D%2710%27%20ry%3D%273%27%20fill%3D%27%23fff3d6%27%20opacity%3D%270.35%27/%3E%20%3Cpath%20d%3D%27M0%2C84%20Q40%2C78%2080%2C84%20T160%2C84%20T240%2C84%20T320%2C84%20T400%2C84%27%20stroke%3D%27%23fdf6ea%27%20stroke-width%3D%271.4%27%20fill%3D%27none%27%20opacity%3D%270.3%27/%3E%20%3Cpath%20d%3D%27M0%2C100%20Q40%2C94%2080%2C100%20T160%2C100%20T240%2C100%20T320%2C100%20T400%2C100%27%20stroke%3D%27%23fdf6ea%27%20stroke-width%3D%271.4%27%20fill%3D%27none%27%20opacity%3D%270.22%27/%3E%20%3Cg%3E%20%3Cpath%20d%3D%27M42%2C14%20L65%2C24%20L88%2C14%27%20stroke%3D%27%23f0c368%27%20stroke-width%3D%272.5%27%20fill%3D%27none%27%20opacity%3D%270.55%27/%3E%20%3Cpolygon%20points%3D%2747%2C73%2058%2C71%2065%2C69%2072%2C71%2083%2C73%2083%2C76%2047%2C76%27%20fill%3D%27%23152029%27/%3E%20%3Cpolygon%20points%3D%2758%2C69%2072%2C69%2069%2C32%2061%2C32%27%20fill%3D%27%2320303a%27/%3E%20%3Cpolygon%20points%3D%2760%2C53%2070%2C53%2069%2C59%2061%2C59%27%20fill%3D%27%23fdf1dc%27/%3E%20%3Crect%20x%3D%2757%27%20y%3D%2727%27%20width%3D%2716%27%20height%3D%275%27%20fill%3D%27%23152029%27/%3E%20%3Crect%20x%3D%2760%27%20y%3D%2717%27%20width%3D%2710%27%20height%3D%2710%27%20fill%3D%27%2320303a%27/%3E%20%3Crect%20x%3D%2762.5%27%20y%3D%2719%27%20width%3D%275%27%20height%3D%276.5%27%20fill%3D%27%23fbcf6a%27/%3E%20%3Cpolygon%20points%3D%2759%2C17%2071%2C17%2065%2C8%27%20fill%3D%27%23152029%27/%3E%20%3Ccircle%20cx%3D%2765%27%20cy%3D%277%27%20r%3D%271.3%27%20fill%3D%27%23152029%27/%3E%20%3Ccircle%20cx%3D%2765%27%20cy%3D%2722%27%20r%3D%271.6%27%20fill%3D%27%23fff3d6%27/%3E%20%3C/g%3E%20%3C/svg%3E");
+    background-size:cover;
+    background-position:center;
+    box-shadow:0 0 0 1px var(--line);
+  }
   .panel-title{
     font-size:34px;margin-bottom:6px;
     background:linear-gradient(100deg, var(--gold-bright) 0%, var(--paper) 22%, var(--gold-bright) 44%, var(--paper) 66%, var(--gold-bright) 100%);
@@ -280,7 +327,7 @@
     padding:6px 0 6px 22px;
     margin:28px 0;
     color:var(--paper-dim);
-    font-family:'Zen Old Mincho',serif;
+    font-family:'Mochiy Pop One',sans-serif;
     font-size:17px;
   }
 
@@ -290,7 +337,7 @@
     padding:13px 24px;
     border:1px solid var(--gold-dim);
     color:var(--gold-bright);
-    font-family:'Zen Old Mincho',serif;
+    font-family:'Mochiy Pop One',sans-serif;
     font-size:14px;
     letter-spacing:.08em;
     transition:background .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease;
@@ -394,7 +441,7 @@
     background:var(--ink-3);
     color:var(--gold-bright);
     font-weight:500;
-    font-family:'Zen Old Mincho',serif;
+    font-family:'Mochiy Pop One',sans-serif;
     letter-spacing:.03em;
   }
   td strong{color:var(--paper);}
@@ -415,7 +462,7 @@
     border:1px solid var(--gold-dim);
     color:var(--gold-bright);
     display:flex;align-items:center;justify-content:center;
-    font-size:12px;font-family:'Zen Old Mincho',serif;
+    font-size:12px;font-family:'Mochiy Pop One',sans-serif;
   }
   .flow-step p{margin:0;font-size:14px;color:var(--paper-dim);}
   .flow-divider{
@@ -438,7 +485,7 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    font-family:'Zen Old Mincho',serif;
+    font-family:'Mochiy Pop One',sans-serif;
     font-size:16px;
     color:var(--paper);
     transition:background .2s ease;
@@ -508,7 +555,7 @@
     .mobile-tabbar button{
       all:unset;cursor:pointer;flex-shrink:0;
       padding:9px 16px;
-      font-family:'Zen Old Mincho',serif;
+      font-family:'Mochiy Pop One',sans-serif;
       font-size:13.5px;
       color:var(--paper-dim);
       border-bottom:2px solid transparent;
@@ -527,6 +574,13 @@
 </head>
 <body>
 
+<div class="shoreline" aria-hidden="true">
+  <svg class="wave wave-back" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,60 C150,20 350,100 600,55 C850,10 1050,95 1200,50 L1200,120 L0,120 Z"></path></svg>
+  <svg class="wave wave-mid" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,75 C200,105 450,25 700,65 C900,95 1050,45 1200,70 L1200,120 L0,120 Z"></path></svg>
+  <svg class="wave wave-front" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,85 C180,60 380,105 620,80 C860,55 1020,100 1200,82 L1200,120 L0,120 Z"></path></svg>
+  <svg class="wave wave-foam" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,85 C180,60 380,105 620,80 C860,55 1020,100 1200,82" fill="none"></path></svg>
+</div>
+
 <div class="mobile-tabbar" id="mobileTabbar"></div>
 
 <div class="shell">
@@ -538,7 +592,7 @@
     </div>
     <nav class="tabs" id="tabNav">
       <button data-target="top" class="active"><span class="dot"></span>TOP ― 街について</button>
-      <button data-target="story"><span class="dot"></span>物語 ― 双つの月</button>
+      <button data-target="story"><span class="dot"></span>物語 ― 灯台の誓い</button>
       <button data-target="latest"><span class="dot"></span>街の物語(最新情報)</button>
       <button data-target="rules"><span class="dot"></span>サーバー規程</button>
       <button data-target="entry"><span class="dot"></span>参加について</button>
@@ -590,84 +644,24 @@
     <!-- ============ STORY ============ -->
     <section class="panel" id="panel-story">
       <div class="eyebrow"><span class="label">CHRONICLE</span><div class="logo-tag logo-mark" role="img" aria-label="Halcyon Town logo"></div></div>
-      <h2 class="panel-title">双つの月が割れる時</h2>
-      <p class="panel-sub">真神一族と黒影一族 ― Halcyon Town 誕生物語</p>
+      <h2 class="panel-title">灯台に光がともる時</h2>
+      <p class="panel-sub">初代市長と仲間たちの物語 ― Halcyon Town 誕生譚</p>
 
       <section class="block">
-        <h3><span class="num">序章</span></h3>
-        <p>古より、世界は二つの力によって均衡を保っていた。</p>
-        <p>「真（まこと）の光」を司る《真神（まがみ）一族》――大口真神の血を継ぐ狼の守護者。<br>
-        「影の理（ことわり）」を操る《黒影（こくえい）一族》――黒狐の血を継ぐ影の使い手。</p>
-        <p>光と影は対立するものではなく、本来は一つの円環を成す存在だった。<br>
-        だが千年前、ある“禁忌”が破られたことで、二つの一族は永遠の争いへと堕ちていく。</p>
+        <h3><span class="num">序章</span>荒廃の地</h3>
+        <p>潮風が吹き抜ける美しい港町「Halcyon Town」。今でこそ笑顔と活気に満ち溢れ、訪れる者すべてに平穏をもたらす理想郷として知られているこの街だが、その礎が築かれる前、ここは一切の生命が失われた完全なる荒廃地だった。</p>
       </section>
 
       <section class="block">
-        <h3><span class="num">第一章</span>月割れの夜</h3>
-        <p>千年前、真神一族の巫女・<strong style="color:var(--paper)">白妙（しろたえ）</strong>は、黒影一族の若き長・<strong style="color:var(--paper)">朧（おぼろ）</strong>と密かに恋に落ちた。</p>
-        <p>本来交わってはならぬ光と影の血。しかし二人は、世界の均衡を保つための“第三の力”を生み出せると信じていた。</p>
-        <p>だが、真神の長老たちはそれを「世界の秩序を乱す災い」と断じ、黒影の一族は「光に魂を奪われる裏切り」と叫んだ。</p>
-        <p>二人が逃げようとした夜――満月が突然、真っ二つに割れた。それは、光と影の均衡が崩れた兆しだった。</p>
-        <p>白妙は捕らえられ、朧は深手を負い姿を消す。二つの一族は互いを“月割れの元凶”として憎み、千年にわたる争いが始まった。</p>
+        <h3><span class="num">第一章</span>流れ着いた男</h3>
+        <p>遥か昔、終わりのない災厄と容赦ない荒波の果てに、この呪われた土地に流れ着いた一人の男がいた。それが、のちに初代市長となる人物である。彼は、絶望に打ち砕かれそうになりながらも、共に生き抜こうと固い絆で結ばれた心優しき仲間たちを引き連れていた。</p>
+        <p>見渡す限り続くのは、黒く焦げた瓦礫の山と、草木一本生えない枯れ果てた大地だけ。冷たい風だけが吹き抜けるその場所で、誰もが生きる希望を見失いかけていた。</p>
       </section>
 
       <section class="block">
-        <h3><span class="num">第二章</span>千年後の継承者</h3>
-        <p>時は流れ、現代。真神一族の末裔として生まれた三兄妹、そして黒影一族の末裔がここに揃う。</p>
-        <div class="card-grid">
-          <div class="char-card">
-            <span class="role">長兄 ・ 光の前衛</span>
-            <h4>牙琉（がる）</h4>
-            <span class="kana">太刀を操る</span>
-            <p>真神一族の長兄。「光の再興」を使命として育てられた。</p>
-          </div>
-          <div class="char-card">
-            <span class="role">長女 ・ 月の巫女</span>
-            <h4>叶月（かづき）</h4>
-            <span class="kana">槍を操る</span>
-            <p>真神一族の長女。同時に“影を憎め”とも教えられてきた。</p>
-          </div>
-          <div class="char-card">
-            <span class="role">次男 ・ 風の戦士</span>
-            <h4>隼士（しゅんじ）</h4>
-            <span class="kana">双剣を操る</span>
-            <p>真神一族の次男。三兄妹の中でも身軽な立ち回りを得意とする。</p>
-          </div>
-          <div class="char-card shadow">
-            <span class="role">黒影一族 ・ 影の戦士</span>
-            <h4>黒影ムノウ</h4>
-            <span class="kana">剣斧を操る／“無の能よりし者”</span>
-            <p>影を喰らい形を変える黒狐の直系。孤独に育ち、光を“魂を焼く毒”と信じていた。</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="block">
-        <h3><span class="num">第三章</span>再会と覚醒</h3>
-        <p>ある夜、牙琉たち三兄妹とムノウは、“月割れの地”で邂逅する。</p>
-        <div class="quote-block">牙琉「影の者……ここは光の領域だ」</div>
-        <div class="quote-block">ムノウ「光こそ、影を縛る鎖だろう」</div>
-        <p>互いに構えた瞬間、光と影が静かに共鳴する。</p>
-        <div class="quote-block">叶月「……この響き、憎しみのものじゃない」</div>
-        <div class="quote-block">隼士「影の技を……真似できる。なぜだ」</div>
-        <div class="quote-block">ムノウ「お前たちの光……黒狐の気配が混じっている」</div>
-        <p>三兄妹とムノウは気づく。千年前の禁忌は、融合を恐れた長老たちの作り話だった。光と影は本来、互いを補い合う存在だったのだ。</p>
-      </section>
-
-      <section class="block">
-        <h3><span class="num">第四章</span>禁忌の真実</h3>
-        <p>逃亡の中で彼らは知る。千年前に月を割ったのは、白妙でも朧でもなく――両一族の長老たちが恐れた“第三の力”そのものだった。</p>
-        <p>光と影が完全に融合した時、世界は新たな理へと進化する。だが、古き力に縋る者たちはそれを拒み、融合を阻止するために月を割ったのだ。</p>
-        <div class="quote-block">牙琉「なら、俺たちが終わらせる」</div>
-        <div class="quote-block">ムノウ「光と影の争いを、今度こそ」</div>
-      </section>
-
-      <section class="block">
-        <h3><span class="num">最終章</span>双つの月が戻る時</h3>
-        <p>4人が手を取り合った瞬間、空に浮かぶ割れた月がゆっくりと繋がり始める。真神の光と黒影の闇が渦を巻き、世界は新たな均衡へと変わっていく。</p>
-        <p>長老たちは恐れ、一族は混乱し、世界は揺れ動く。だが牙琉たちは迷わない。</p>
-        <div class="quote-block">「光と影は、対立ではなく循環」<br>「俺たちが、その証明になる」</div>
-        <p>そして――千年続いた争いは、静かに幕を閉じた。</p>
+        <h3><span class="num">第二章</span>灯台の誓い</h3>
+        <p>しかし、その絶望の只中で、奇跡的にただ一つだけ原形をとどめてそびえ立つ建造物があった。かつて海の男たちを見守り続けた、古びた「灯台」である。崩れかけたコンクリートと錆びついた鉄骨の中にぽつんと佇むその姿を見たとき、市長は仲間たちの前で力強く宣言した。</p>
+        <div class="quote-block">「この場所を、もう一度人が希望を持って生きられる街にしよう。あの灯台の光を再びともし、ここを私たちの新しい故郷にするんだ」</div>
       </section>
 
       <div class="divider-moon">
@@ -677,15 +671,21 @@
       </div>
 
       <section class="block">
-        <h3><span class="num">エピローグ</span>月影の下で</h3>
-        <p>今の街は、かつての混乱が嘘のように静かだ。真神一族も黒影一族も、その名を知る者はもうほとんどいない。彼らがどこへ消えたのか、誰も語らない。ただ、街の人々は平穏を享受し、日々を生きている。</p>
-        <p>そんな街を表立って支えているのが――<strong style="color:var(--gold-bright)">月詠一族（つくよみいちぞく）</strong>だ。行政にも顔を出し、街の治安維持にも協力し、表向きは“善き守り手”として知られている。だが、彼らの本質を知る者はいない。</p>
-        <p>夜になると、月詠の者たちは街の裏路地へと姿を消す。誰も知らない場所で、誰も知らない目的のために動いている。その影は、街の理をそっと書き換えているようにも見えた。だが、それを証明できる者はいない。月が満ちる夜、街の空気がわずかに変わる――ただそれだけだ。</p>
-        <p>一方で、街にはもうひとつの噂がある。かつてこの地を救った四人の英雄――牙琉、叶月、隼士、ムノウ。彼らは死んだわけではない。ただ、姿を消しただけだ。</p>
-        <p>誰かが夜道で、銀の髪をなびかせる影を見たと言う。別の誰かは、屋根の上を跳ぶ小さな影を見たと言う。また別の誰かは、赤い瞳が闇の奥からこちらを見ていたと語る。</p>
-        <p>それが本当に彼らなのか、確かめる術はない。だが、街が大きく揺らぐその瞬間――英雄たちはどこかで、静かに見守っているのかもしれない。</p>
-        <p>月が割れた夜の真実は、今も闇の中だ。だが、双つの月が照らす街には、確かに“誰か”の気配がある。</p>
-        <p style="color:var(--gold-bright);font-family:'Zen Old Mincho',serif;font-size:16px;">それが、希望なのか、警告なのか。答えを知るのは、月だけだ。</p>
+        <h3><span class="num">第三章</span>開拓の日々</h3>
+        <p>その言葉を合図に、過酷な開拓の日々が始まった。仲間たちは素手で瓦礫をどかし、傷だらけになりながら土を耕し、自分たちの手で家屋や道を建て直していった。崩壊したインフラをゼロから再構築し、命がけでこの街の土台を立て直した彼らの血と汗の結晶こそが、今のHalcyon Townのすべての源泉となっている。</p>
+        <p>そして彼らは、暗黒の時代を耐え抜いた不屈の希望の象徴として、唯一残ったあの古い灯台を街一番の名物として丁寧に修復し、毎夜温かな光を灯し続けたのだ。</p>
+      </section>
+
+      <section class="block">
+        <h3><span class="num">最終章</span>受け継がれる灯</h3>
+        <p>月日は流れ、その開拓の苦労を知る世代から、新しい世代へと街は引き継がれていった。現在の住民たちは誰もが知っている。自分たちが毎朝穏やかな目覚めを迎え、美しい街並みの中で美味しい空気を吸い、安全に暮らせる日々を送れているのは、すべてあの市長と初代の仲間たちがこの荒廃した地を切り拓き、命を懸けて守り抜いてくれたおかげなのだと。</p>
+        <p>住民の誰もが市長に全幅の信頼を寄せ、この完璧に整えられた美しき港町こそが、自分たちの誇り高き故郷であると信じて疑わなかった。</p>
+      </section>
+
+      <section class="block">
+        <h3><span class="num">エピローグ</span>まだ知らぬ真実</h3>
+        <p>この温かな日常の裏に隠された、まだ誰も知るはずのない本当の歴史の輪郭に気づく日が来るまでは――。</p>
+        <p style="color:var(--gold-bright);font-family:'Mochiy Pop One',sans-serif;font-size:16px;">灯台の光が照らしているのは、街の未来か、それとも――。</p>
       </section>
     </section>
 
@@ -922,6 +922,13 @@
   }
 
   CONTENT_TARGETS.forEach(loadContent);
+
+  document.querySelectorAll('.panel-title').forEach(title => {
+    const banner = document.createElement('div');
+    banner.className = 'scene-banner';
+    banner.setAttribute('aria-hidden', 'true');
+    title.parentNode.insertBefore(banner, title);
+  });
 </script>
 </body>
 </html>
