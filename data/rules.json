@@ -8,12 +8,12 @@
     {
       "num": "02",
       "title": "違反行為",
-      "html": "<ul>\n          <li>暴言、ヘイトスピーチ、セクハラ、人種差別発言など、他人が不快になる発言行為</li>\n          <li>SNS等でVAY cityに対する不適切な発言行為</li>\n          <li>Halcyon Town運営を妨げる行為</li>\n          <li>Halcyon Townに関連する六法での荒らし行為やスパムチャットなどの行為</li>\n          <li>Cheatはもちろん、グラフィック系MOD・Citizen・ReShade・軽量化MOD等の使用は全面禁止<br>\n            <span style=\"font-size:12.5px;color:var(--muted)\">※RPサーバーの為、見え方や優位性に影響のあるものは禁止としますが、多くのMODから確認し許可を出すのは難しい為、全て禁止です。</span>\n          </li>\n        </ul>\n        <p style=\"font-size:13px;color:var(--muted)\">運営も人間です。個人的な事情や生活があります。対応等に時間がかかる場合もありますが、ご理解をお願いします。</p>\n      "
+      "html": "<ul>\n          <li>暴言、ヘイトスピーチ、セクハラ、人種差別発言など、他人が不快になる発言行為</li>\n          <li>SNS等でHalcyon Townに対する不適切な発言行為</li>\n          <li>Halcyon Town運営を妨げる行為</li>\n          <li>Halcyon Townに関連する六法での荒らし行為やスパムチャットなどの行為</li>\n          <li>Cheatはもちろん、グラフィック系MOD・Citizen・ReShade・軽量化MOD等の使用は全面禁止<br>\n            <span style=\"font-size:12.5px;color:var(--muted)\">※RPサーバーの為、見え方や優位性に影響のあるものは禁止としますが、多くのMODから確認し許可を出すのは難しい為、全て禁止です。</span>\n          </li>\n        </ul>\n        <p style=\"font-size:13px;color:var(--muted)\">運営も人間です。個人的な事情や生活があります。対応等に時間がかかる場合もありますが、ご理解をお願いします。</p>\n      "
     },
     {
       "num": "03",
       "title": "荒らし行為への対応",
-      "html": "<ul>\n          <li>荒らし行為やルール違反をしている人を見つけた場合、必ず運営に伝えてください。</li>\n          <li>VAY cityでの荒らし行為やルール違反が見受けられた場合、運営から処罰を行います。</li>\n          <li>荒らし行為への加担が見られた時点で、Ban対象となります。</li>\n        </ul>\n      "
+      "html": "<ul>\n          <li>荒らし行為やルール違反をしている人を見つけた場合、必ず運営に伝えてください。</li>\n          <li>Halcyon Townでの荒らし行為やルール違反が見受けられた場合、運営から処罰を行います。</li>\n          <li>荒らし行為への加担が見られた時点で、Ban対象となります。</li>\n        </ul>\n      "
     },
     {
       "num": "04",
